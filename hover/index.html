@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>hover</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300|Noto+Sans+JP:300&amp;subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/hover.css">
+</head>
+<body>
+    <header>
+        <h1>hover</h1>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <h2 class="contentTtl">物理ボタン風</h2>
+            <div class="hover01">hover me</div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;div class="hover01"&gt;hover me&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>.hover01 {
+    cursor: pointer;
+    border-radius: 5px;
+    width: 150px;
+    text-align: center;
+    padding: 5px 0;
+    background: #f5deb3;
+    box-shadow: 0 5px 0 #d2b48c;    /* ボタンの立体感 */
+    transition: .5s;    /* なめらかな動き */
+}
+.hover01:hover {
+    opacity: .8;
+    box-shadow: 0 1px 0 #d2b48c;    /* 沈み込む感じ */
+    transform: translateY(3px);    /* 沈み込む感じ */
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section>
+
+        <section class="content">
+                <h2 class="contentTtl">フローティングボタン</h2>
+                <div class="hover02">
+                    <img src="./img/hover02.png" alt="">
+                </div>
+                <div class="slideTglBtn">View code</div>
+                <div class="slideTglArea">
+                    <div class="code">
+                        <h3>HTML</h3>
+                        <pre class="prettyprint linenums"><code>&lt;div class="hover02"&gt;&lt;img src="./img/hover02.png" alt=""&gt;&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="code">
+                        <h3>CSS</h3>
+                        <pre class="prettyprint linenums"><code>.hover02 {
+    cursor: pointer;
+    background: #ff6347;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .4);
+    transition: .7s;    /* なめらかな動き */
+    position: relative;
+}
+.hover02 img {
+    width: 32px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+.hover02:hover {
+    transform: scale(1.02); /* 少し拡大 */
+    box-shadow: 4px 18px 24px 7px rgba(0, 0, 0, .15), 4px 12px 16px -2px rgba(0, 0, 0, .25);
+    /* 大きく薄い影と若干小さく濃い影の２種類で浮き上がった風に */
+}</code></pre>
+                    </div>
+                </div><!-- /toggleSlide -->
+            </section>
+
+            <section class="content">
+                <h2 class="contentTtl">ズーム</h2>
+                <div class="hover03">
+                    <p>hover me</p>
+                </div>
+                <div class="slideTglBtn">View code</div>
+                <div class="slideTglArea">
+                    <div class="code">
+                        <h3>HTML</h3>
+                        <pre class="prettyprint linenums"><code>&lt;div class="hover03"&gt;&lt;p&gt;hover me&lt;/p&gt;&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="code">
+                        <h3>CSS</h3>
+                        <pre class="prettyprint linenums"><code>.hover03 {
+    cursor: pointer;
+    width: 300px;
+    height: 180px;
+    overflow: hidden;   /* 画像を拡大してはみ出た部分を非表示 */
+    background: #000;
+    box-shadow: 0 5px 12px 0 rgba(0, 0, 0, .4);
+    position: relative;
+}
+.hover03::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(../hover/img/hover03.jpg) no-repeat;    /* 画像を設定 */
+    background-size: cover;
+    opacity: .7;
+    transition: .5s;
+}
+.hover03 p {
+    position: absolute;
+    color: #fff;
+    font-size: 40px;
+    top: 30%;
+    left: 20%;
+    z-index: 1;
+}
+.hover03:hover::after {
+    transform: scale(1.2);  /* 画像をズーム */
+    opacity: .5;    /* 背景に敷いた黒で暗くなる */
+}</code></pre>
+                    </div>
+                </div><!-- /toggleSlide -->
+            </section>
+
+            <section class="content">
+                <h2 class="contentTtl">テキストを表示</h2>
+                <div class="hover04">
+                    <img src="./img/hover04.jpg" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="slideTglBtn">View code</div>
+                <div class="slideTglArea">
+                    <div class="code">
+                        <h3>HTML</h3>
+                        <pre class="prettyprint linenums"><code>&lt;div class="hover04"&gt;
+    &lt;img src="./img/hover02.png" alt=""&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="code">
+                        <h3>CSS</h3>
+                        <pre class="prettyprint linenums"><code>.hover04 {
+    cursor: pointer;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.hover04 p {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    background: rgba(159, 145, 144, .5);  /* 文章の背景を暗く */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    padding-bottom: 0;  /* 文章の位置を下げる */
+    opacity: 0; /* 透明にしておく */
+    transition: .5s;
+}
+.hover04:hover p {
+    opacity: 1; /* ホバーされたら表示 */
+    padding-bottom: 30px;   /* 文章の位置を上げる */
+}</code></pre>
+                    </div>
+                </div><!-- /toggleSlide -->
+            </section>
+
+            <section class="content">
+                <h2 class="contentTtl">背景がアニメーション</h2>
+                <div class="hover05">hover me</div>
+                <div class="slideTglBtn">View code</div>
+                <div class="slideTglArea">
+                    <div class="code">
+                        <h3>HTML</h3>
+                        <pre class="prettyprint linenums"><code>&lt;div class="hover05"&gt;hover me&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="code">
+                        <h3>CSS</h3>
+                        <pre class="prettyprint linenums"><code>.hover05 {
+    cursor: pointer;
+    width: 200px;
+    color: #9932cc;
+    font-size: 18px;
+    font-weight: bold;
+    border: solid 2px #9932cc;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    transition: .3s;    /* 文字色が変わるスピード */
+    overflow: hidden;
+    position: relative;
+}
+.hover05::after {
+    content: '';
+    background: #9932cc;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    left: -35%;
+    top: 0;
+    transform: skew(50deg); /* 傾斜変形させる */
+    transition: .6s;    /* 背景が変わるスピード */
+    transform-origin: top left; /* 変形の原点を左上に設定 */
+    width: 0;
+}
+.hover05:hover {
+    color: #fff;
+}
+.hover05:hover::after {
+    width: 135%;    /* 背景が右方向へ伸びる */
+}</code></pre>
+                    </div>
+                </div><!-- /toggleSlide -->
+            </section>
+
+            <section class="content">
+                <h2 class="contentTtl">枠線がアニメーション</h2>
+                <div class="hover06">hover me</div>
+                <div class="slideTglBtn">View code</div>
+                <div class="slideTglArea">
+                    <div class="code">
+                        <h3>HTML</h3>
+                        <pre class="prettyprint linenums"><code>&lt;div class="hover06"&gt;hover me&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="code">
+                        <h3>CSS</h3>
+                        <pre class="prettyprint linenums"><code>.hover06 {
+    cursor: pointer;
+    width: 200px;
+    color: #4682b4;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    margin: 0 auto;
+}
+.hover06::after,
+.hover06::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20%; /* ホバー前の横線の長さになる */
+    height: 30%;    /* ホバー前の縦線の長さになる */
+    transition: .6s;    /* 変化スピード */
+    border-radius: 2px;
+}
+.hover06::after {
+    bottom: 0;
+    right: 0;   /* 右下に設置 */
+    border-bottom: solid 2px #4682b4;
+    border-right: solid 2px #4682b4;    /* 要素の右と下の線のみ表示 */
+}
+.hover06::before {
+    top: 0;
+    left: 0;   /* 左上に設置 */
+    border-top: solid 2px #4682b4;
+    border-left: solid 2px #4682b4;    /* 要素の左と上の線のみ表示 */
+}
+.hover06:hover::after,
+.hover06:hover::before {
+    width: 106%;
+    height: 120%;   /* 要素を拡大することで線が伸びているように見せる */
+}</code></pre>
+                    </div>
+                </div><!-- /toggleSlide -->
+            </section>
+
+            <section class="content">
+                <h2 class="contentTtl">グラデーション</h2>
+                <div class="hover07">hover me</div>
+                <div class="slideTglBtn">View code</div>
+                <div class="slideTglArea">
+                    <div class="code">
+                        <h3>HTML</h3>
+                        <pre class="prettyprint linenums"><code>&lt;div class="hover07"&gt;hover me&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="code">
+                        <h3>CSS</h3>
+                        <pre class="prettyprint linenums"><code>.hover07 {
+    cursor: pointer;
+    width: 200px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    background: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);   /* グラデーションを作成 */
+    background-size: 200% auto; /* 背景の長さをボタン要素の2倍に */
+    transition: .5s;
+}
+.hover07:hover {
+    background-position: right center;  /* 背景の位置を右にずらすことでグラデーションが動くように見える */
+}</code></pre>
+                    </div>
+                </div><!-- /toggleSlide -->
+            </section>
+
+            <section class="content">
+                <h2 class="contentTtl">@keyframes</h2>
+                <div class="hover08"><div class="hover08_inner">hover me</div></div>
+                <div class="slideTglBtn">View code</div>
+                <div class="slideTglArea">
+                    <div class="code">
+                        <h3>HTML</h3>
+                        <pre class="prettyprint linenums"><code>&lt;div class="hover08"&gt;hover me&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="code">
+                        <h3>CSS</h3>
+                        <pre class="prettyprint linenums"><code>.hover07 {
+    cursor: pointer;
+    width: 200px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    background: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);   /* グラデーションを作成 */
+    background-size: 200% auto; /* 背景の長さをボタン要素の2倍に */
+    transition: .5s;
+}
+.hover07:hover {
+    background-position: right center;  /* 背景の位置を右にずらすことでグラデーションが動くように見える */
+}</code></pre>
+                    </div>
+                </div><!-- /toggleSlide -->
+            </section>
+        
+    </main>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>
