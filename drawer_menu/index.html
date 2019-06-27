@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>drawer menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300|Noto+Sans+JP:300&amp;subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/drawer_menu.css">
+</head>
+<body>
+    <header>
+        <h1>drawer_menu</h1>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+
+        <div class="drawer_demo">
+            <div class="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="navi">
+                <ul>
+                    <li>menu01</li>
+                    <li>menu02</li>
+                    <li>menu03</li>
+                    <li>menu04</li>
+                </ul>
+            </div>
+            <div class="overlay"></div>
+            <div class="dummy">
+                <p><img src="./img/image01.jpg" alt=""></p>
+                <p><img src="./img/image02.jpg" alt=""></p>
+                <p><img src="./img/image03.jpg" alt=""></p>
+                <p><img src="./img/image04.jpg" alt=""></p>
+            </div>
+        </div>      
+        
+        <section class="content">
+            <h2 class="contentTtl">共通設定</h2>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;div class=&quot;drawerWrapCmn&quot;&gt;
+    &lt;div class=&quot;menuBtnCmn menuBtn00&quot;&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>.menuBtnCmn {
+    position: relative;
+    width: 50px;
+    height: 44px;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: .5s;
+}
+.menuBtnCmn span {
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: .5s;
+}
+.menuBtnCmn span:nth-of-type(1) {
+    top: 0;
+}
+.menuBtnCmn span:nth-of-type(2) {
+    top: 20px;
+}
+.menuBtnCmn span:nth-of-type(3) {
+    bottom: 0;
+}</code></pre>
+                </div>
+                <div class="code">
+                    <h3>JS</h3>
+                    <pre class="prettyprint linenums"><code>$('.menuBtnCmn').on('click', function(){
+    if($(this).hasClass('active')) {
+        $(this).removeClass('active');
+    } else {
+        $(this).addClass('active');
+    }
+});</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section>
+
+        <section class="content">
+            <h2 class="contentTtl">中央のラインが消えて、上下のラインがクローズボタンになる</h2>
+            <div class="drawerWrapCmn drawerWrap01">
+                <div class="menuBtnCmn menuBtn01">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>CSS</h3>
+                <pre class="prettyprint linenums"><code>.menuBtn01.active span:nth-of-type(1) {
+    transform: translateY(20px) rotate(-45deg);
+}
+.menuBtn01.active span:nth-of-type(2) {
+    opacity: 0;
+}
+.menuBtn01.active span:nth-of-type(3) {
+    transform: translateY(-20px) rotate(45deg);
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section>
+
+        <section class="content">
+            <h2 class="contentTtl">全体が回転しながらクローズボタンになる</h2>
+            <div class="drawerWrapCmn drawerWrap02">
+                <div class="menuBtnCmn menuBtn02">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>CSS</h3>
+                <pre class="prettyprint linenums"><code>.menuBtn02.active {
+    transform: rotate(360deg);
+}
+.menuBtn02.active span:nth-of-type(1) {
+    transform: translateY(20px) rotate(-45deg);
+}
+.menuBtn02.active span:nth-of-type(2) {
+    transform: translateY(0) rotate(45deg);
+}
+.menuBtn02.active span:nth-of-type(3) {
+    opacity: 0;
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section>
+
+        <section class="content">
+            <h2 class="contentTtl">ラインがひとつになって、その後クローズボタンになる</h2>
+            <div class="drawerWrapCmn drawerWrap03">
+                <div class="menuBtnCmn menuBtn03">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>CSS</h3>
+                <pre class="prettyprint linenums"><code>.menuBtn03 span:nth-of-type(1) {
+    animation: menu-bar01 .75s forwards;
+}
+@keyframes menu-bar01 {
+    0% {
+        transform: translateY(20px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(20px) rotate(0);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+.menuBtn03 span:nth-of-type(2) {
+    transition: .25s .25s;
+    opacity: 1;
+}
+.menuBtn03 span:nth-of-type(3) {
+    animation: menu-bar02 .75s forwards;
+}
+@keyframes menu-bar02 {
+    0% {
+        transform: translateY(-20px) rotate(-45deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(0);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+.menuBtn03.active span:nth-of-type(1) {
+    animation: active-menu-bar01 .75s forwards;
+}
+@keyframes active-menu-bar01 {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(20px) rotate(0);
+    }
+    100% {
+        transform: translateY(20px) rotate(45deg);
+    }
+}
+.menuBtn03.active span:nth-of-type(2) {
+    opacity: 0;
+}
+.menuBtn03.active span:nth-of-type(3) {
+    animation: active-menu-bar03 .75s forwards;
+}
+@keyframes active-menu-bar03 {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-20px) rotate(0);
+    }
+    100% {
+        transform: translateY(-20px) rotate(-45deg);
+    }
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section>
+
+        <section class="content">
+            <h2 class="contentTtl">上下のラインが動いて矢印になる</h2>
+            <div class="drawerWrapCmn drawerWrap04">
+                <div class="menuBtnCmn menuBtn04">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>CSS</h3>
+                <pre class="prettyprint linenums"><code>.menuBtn04.active span:nth-of-type(1) {
+    width: 20px;
+    transform: translate(-2px, 26px) rotate(45deg);
+}
+.menuBtn04.active span:nth-of-type(3) {
+    width: 20px;
+    transform: translate(-2px, -26px) rotate(-45deg);
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section>
+
+        <section class="content">
+            <h2 class="contentTtl">全体が回転しながら矢印になる</h2>
+            <div class="drawerWrapCmn drawerWrap05">
+                <div class="menuBtnCmn menuBtn05">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>CSS</h3>
+                <pre class="prettyprint linenums"><code>.menuBtn05.active {
+    transform: rotate(360deg);
+}
+.menuBtn05.active span:nth-of-type(1) {
+    width: 20px;
+    transform: translate(-2px, 26px) rotate(45deg);
+}
+.menuBtn05.active span:nth-of-type(3) {
+    width: 20px;
+    transform: translate(-2px, -26px) rotate(-45deg);
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section>
+
+    </main>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/drawer_menu.js"></script>
+</body>
+</html>
