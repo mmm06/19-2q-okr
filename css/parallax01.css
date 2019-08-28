@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+body,
+html {
+  height: 100%; /* 全画面にコンテンツを広げるために親要素に高さ100%を指定しておく */
+  font-size: 30px;
+}
+div {
+    color: #FFF;
+    display: flex; /* コンテンツを天地中央に配置 */
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* 高さを最大に */
+    padding: 5%;
+  }
+.parallax01_bg { /* パララックスな背景画像の共通設定 */
+    background-attachment: fixed; /* 背景画像を固定表示 */
+    background-position: center;
+    background-size: cover; /* コンテンツ全体に画像を表示 */
+    background-repeat: no-repeat;
+    height: 70%; /* 背景画像ありのエリアのみ高さを小さくしてみる */
+}
+.parallax01_img01 {
+    height: 100%;
+    background-image: url('../parallax/img/parallax01_img01.jpg'); /* 各エリアに背景画像を設定 */
+}
+.parallax01_img02 {
+    background-image: url('../parallax/img/parallax01_img02.jpg');
+}
+.parallax01_img03 {
+    background-image: url('../parallax/img/parallax01_img03.jpg');
+}
+.parallax01_img04 {
+    background-image: url('../parallax/img/parallax01_img04.jpg');
+}
+.parallax01_bg p { /* トップのコンテンツ */
+    text-align: center;
+    border: solid 2px #fff;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+.parallax01_content01 { /* 各コンテンツの背景色を設定 */
+    background-color: #9ab8ae;
+}
+.parallax01_content02 {
+    background-color: #bc9696;
+}
+.parallax01_content03 {
+    background-color: #bbb;
+}
+.parallax01_content04 {
+    background-color: #bbab97;
+}
