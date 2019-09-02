@@ -14,6 +14,6 @@ $(function(){
         $('.parallax02_img03').css('background-position-y', -(scrollPosition - 3000) / 4 + 'px');
         $('.parallax02_img04').css('background-position-y', -(scrollPosition - 4500) / 4 + 'px');
     });
-    
 
 });
+

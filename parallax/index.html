@@ -213,6 +213,120 @@ div {
                 </div>
             </div><!-- /toggleSlide -->
         </section><!-- /content 02 -->
+
+        <!-- content 03 -->
+        <section class="content">
+            <h2 class="contentTtl">プラグイン rellax.js</h2>
+            <div class="link demo03">
+                <a href="./parallax03.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;h1&gt;SWEETS&lt;/h1&gt;
+                        &lt;div class=&quot;wrapper&quot;&gt;
+&lt;!-- Cake --&gt;
+&lt;!-- パララックス効果を適用させたい要素にクラスrellaxをつける --&gt;
+&lt;!-- 速く動かしたいときは、data-rellax-speed属性を0より大きく、遅く動かしたいときは、data-rellax-speed属性を0より小さく設定する。 --&gt;
+&lt;div class=&quot;parallax03_img01 rellax&quot; data-rellax-speed=&quot;-4&quot;&gt;&lt;img src=&quot;./img/parallax03_img01.png&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax03_content01 rellax&quot; data-rellax-speed=&quot;0&quot;&gt;
+    &lt;p class=&quot;title ttl_content01&quot;&gt;Cake&lt;/p&gt;
+    &lt;p class=&quot;text&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- Pie --&gt;
+&lt;div class=&quot;parallax03_img02 rellax&quot; data-rellax-speed=&quot;-3.5&quot;&gt;&lt;img src=&quot;./img/parallax03_img02.png&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax03_content02 rellax&quot; data-rellax-speed=&quot;-1&quot;&gt;
+    &lt;p class=&quot;title ttl_content02&quot;&gt;Pie&lt;/p&gt;
+    &lt;p class=&quot;text&quot;&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. &lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- Mont Blanc --&gt;
+&lt;div class=&quot;parallax03_img03 rellax&quot; data-rellax-speed=&quot;-4&quot;&gt;&lt;img src=&quot;./img/parallax03_img03.png&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax03_content03 rellax&quot; data-rellax-speed=&quot;-2.7&quot;&gt;
+    &lt;p class=&quot;title ttl_content03&quot;&gt;Mont Blanc&lt;/p&gt;
+    &lt;p class=&quot;text&quot;&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. &lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- Macaroon --&gt;
+&lt;div class=&quot;parallax03_img04 rellax&quot; data-rellax-speed=&quot;-2.3&quot;&gt;&lt;img src=&quot;./img/parallax03_img04.png&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax03_content04 rellax&quot; data-rellax-speed=&quot;-3&quot;&gt;
+    &lt;p class=&quot;title ttl_content04&quot;&gt;Macaroon&lt;/p&gt;
+    &lt;p class=&quot;text&quot;&gt;Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;../js/rellax.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var rellax = new Rellax(&#039;.rellax&#039;);
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>body,
+html {
+    height: 200%; /* 全画面にコンテンツを広げるために親要素に高さ200%を指定しておく */
+    font-size: 30px;
+}
+h1 {
+    font-size: 100px;
+    margin: 50px 0;
+    text-align: center;
+    color: #ACB6E5; /* 非対応のブラウザでの文字色を設定 */
+    background: -webkit-linear-gradient(0deg, #ff69b4, #ffe140); /* 背景色にグラデーションを指定 */
+    -webkit-background-clip: text; /* テキストでくり抜く */
+    -webkit-text-fill-color: transparent; /* くり抜いた部分は背景を表示 */
+}
+.wrapper {
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+.wrapper div {
+    position: absolute;
+}
+.wrapper img {
+    max-width: 300px;
+}
+.title {
+    font-size: 70px;
+    font-weight: bold;
+}
+.text {
+    font-size: 18px;
+}
+/* 画像の位置を指定 */
+.parallax03_img02 {
+    top: 12%;
+    right: 50px;
+}
+.parallax03_img03 {
+    top: 23%;
+    left: 100px;
+}
+.parallax03_img04 {
+    top: 37%;
+    right: 100px;
+}
+/* テキストの位置を指定 */
+.parallax03_content01 {
+    top: 5%;
+    left: 39%;
+}
+.parallax03_content02 {
+    top: 15%;
+    right: 35%;
+}
+.parallax03_content03 {
+    top: 23%;
+    left: 45%;
+}
+.parallax03_content04 {
+    top: 38%;
+    left: 18%;
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 03 -->
         
     </main>
 

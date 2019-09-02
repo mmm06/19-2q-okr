@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+body,
+html {
+  height: 200%; /* 全画面にコンテンツを広げるために親要素に高さ200%を指定しておく */
+  font-size: 30px;
+}
+h1 {
+    font-size: 100px;
+    margin: 50px 0;
+    text-align: center;
+    color: #ACB6E5; /* 非対応のブラウザでの文字色を設定 */
+    background: -webkit-linear-gradient(0deg, #ff69b4, #ffe140); /* 背景色にグラデーションを指定 */
+    -webkit-background-clip: text; /* テキストでくり抜く */
+    -webkit-text-fill-color: transparent; /* くり抜いた部分は背景を表示 */
+}
+.wrapper {
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+.wrapper div {
+    position: absolute;
+}
+.wrapper img {
+    max-width: 300px;
+}
+.title {
+    font-size: 70px;
+    font-weight: bold;
+}
+.text {
+    font-size: 18px;
+}
+/* 画像の位置を指定 */
+.parallax03_img02 {
+    top: 12%;
+    right: 50px;
+}
+.parallax03_img03 {
+    top: 23%;
+    left: 100px;
+}
+.parallax03_img04 {
+    top: 37%;
+    right: 100px;
+}
+/* テキストの位置を指定 */
+.parallax03_content01 {
+    top: 5%;
+    left: 39%;
+}
+.parallax03_content02 {
+    top: 15%;
+    right: 35%;
+}
+.parallax03_content03 {
+    top: 23%;
+    left: 45%;
+}
+.parallax03_content04 {
+    top: 38%;
+    left: 18%;
+}
