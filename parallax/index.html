@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>parallax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300|Noto+Sans+JP:300&amp;subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/parallax.css">
+</head>
+<body>
+    <header>
+        <h1>parallax</h1>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+        <!-- content 01 -->
+        <section class="content">
+            <h2 class="contentTtl">CSS cover</h2>
+            <div class="link demo01">
+                <a href="./parallax01.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;div class=&quot;parallax01_bg parallax01_img01&quot;&gt;
+    &lt;p&gt;scroll&lt;br&gt;&amp;darr;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;parallax01_content01&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;parallax01_bg parallax01_img02&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax01_content02&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;parallax01_bg parallax01_img03&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax01_content03&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;parallax01_bg parallax01_img04&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax01_content04&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>body,
+html {
+    height: 100%; /* 全画面にコンテンツを広げるために親要素に高さ100%を指定しておく */
+    font-size: 30px;
+}
+div {
+    color: #FFF;
+    display: flex; /* コンテンツを天地中央に配置 */
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* 高さを最大に */
+    padding: 5%;
+    }
+.parallax01_bg { /* パララックスな背景画像の共通設定 */
+    background-attachment: fixed; /* 背景画像を固定表示 */
+    background-position: center;
+    background-size: cover; /* コンテンツ全体に画像を表示 */
+    background-repeat: no-repeat;
+    height: 70%; /* 背景画像ありのエリアのみ高さを小さくしてみる */
+}
+.parallax01_img01 {
+    height: 100%;
+    background-image: url('../parallax/img/parallax01_img01.jpg'); /* 各エリアに背景画像を設定 */
+}
+.parallax01_img02 {
+    background-image: url('../parallax/img/parallax01_img02.jpg');
+}
+.parallax01_img03 {
+    background-image: url('../parallax/img/parallax01_img03.jpg');
+}
+.parallax01_img04 {
+    background-image: url('../parallax/img/parallax01_img04.jpg');
+}
+.parallax01_bg p { /* トップのコンテンツ */
+    text-align: center;
+    border: solid 2px #fff;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+.parallax01_content01 { /* 各コンテンツの背景色を設定 */
+    background-color: #9ab8ae;
+}
+.parallax01_content02 {
+    background-color: #bc9696;
+}
+.parallax01_content03 {
+    background-color: #bbb;
+}
+.parallax01_content04 {
+    background-color: #bbab97;
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 01 -->
+
+        <!-- content 02 -->
+        <section class="content">
+            <h2 class="contentTtl">CSS cover + jQuery</h2>
+            <div class="link demo02">
+                <a href="./parallax02.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;div class=&quot;parallaxBg parallax02_img01&quot;&gt;
+    &lt;p&gt;scroll&lt;br&gt;&amp;darr;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;parallax02_content01&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;parallaxBg parallax02_img02&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax02_content02&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;parallaxBg parallax02_img03&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax02_content03&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;parallaxBg parallax02_img04&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax02_content04&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>body,
+html {
+    height: 100%; /* 全画面にコンテンツを広げるために親要素に高さ100%を指定しておく */
+    font-size: 30px;
+}
+div {
+    color: #FFF;
+    display: flex; /* コンテンツを天地中央に配置 */
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* 高さを最大に */
+    padding: 5%;
+    }
+.parallaxBg { /* パララックスな背景画像の共通設定 */
+    background-attachment: fixed; /* 背景画像を固定表示 */
+    background-position: center top; /* JSで動きを加えるときにカクつかないよう、background-position-yはtopに設定 */
+    background-size: cover; /* コンテンツ全体に画像を表示 */
+    background-repeat: no-repeat;
+    height: 70%; /* 背景画像ありのエリアのみ高さを小さくしてみる */
+}
+.parallax02_img01 {
+    height: 100%;
+    background-image: url('../parallax/img/parallax02_img01.jpg'); /* 各エリアに背景画像を設定 */
+}
+.parallax02_img02 {
+    background-image: url('../parallax/img/parallax02_img02.jpg');
+}
+.parallax02_img03 {
+    background-image: url('../parallax/img/parallax02_img03.jpg');
+}
+.parallax02_img04 {
+    background-image: url('../parallax/img/parallax02_img04.jpg');
+}
+.parallax02_img01 p { /* トップのコンテンツ */
+    text-align: center;
+    border: solid 2px #fff;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+.parallax02_content01 { /* 各コンテンツの背景色を設定 */
+    background-color: #86a4c7;
+}
+.parallax02_content02 {
+    background-color: #9491bc;
+}
+.parallax02_content03 {
+    background-color: #bdae90;
+}
+.parallax02_content04 {
+    background-color: #c49e89;
+}</code></pre>
+                </div>
+                <div class="code">
+                    <h3>JS</h3>
+                    <pre class="prettyprint linenums"><code>$(window).scroll(function () {
+
+    // スクロール時のY軸の値を取得
+    var scrollPosition = $(this).scrollTop();
+
+    // background-position-yでスクロール時の背景画像のY軸の値を変更することでスクロールのスピードを変更できる
+    // 割る数字を大きくするとスピードが遅くなる
+    $('.parallax02_img01').css('background-position-y', -scrollPosition / 4 + 'px');
+    // 2枚目以降の画像は、スクロールしていくと見切れてしまうので、スクロールした分の値（今回は大体の値）を引き、見切れないよう調整する
+    $('.parallax02_img02').css('background-position-y', -(scrollPosition - 1500) / 4 + 'px');
+    $('.parallax02_img03').css('background-position-y', -(scrollPosition - 3000) / 4 + 'px');
+    $('.parallax02_img04').css('background-position-y', -(scrollPosition - 4500) / 4 + 'px');
+});</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 02 -->
+
+        <!-- content 03 -->
+        <section class="content">
+            <h2 class="contentTtl">プラグイン rellax.js</h2>
+            <div class="link demo03">
+                <a href="./parallax03.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;h1&gt;SWEETS&lt;/h1&gt;
+                            &lt;div class=&quot;wrapper&quot;&gt;
+&lt;!-- Cake --&gt;
+&lt;!-- パララックス効果を適用させたい要素にクラスrellaxをつける --&gt;
+&lt;!-- 速く動かしたいときは、data-rellax-speed属性を0より大きく、遅く動かしたいときは、data-rellax-speed属性を0より小さく設定する。 --&gt;
+&lt;div class=&quot;parallax03_img01 rellax&quot; data-rellax-speed=&quot;-5&quot;&gt;&lt;img src=&quot;./img/parallax03_img01.png&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax03_content01 rellax&quot; data-rellax-speed=&quot;-2&quot;&gt;
+    &lt;p class=&quot;title ttl_content01&quot;&gt;Cake&lt;/p&gt;
+    &lt;p class=&quot;text&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- Pie --&gt;
+&lt;div class=&quot;parallax03_img02 rellax&quot; data-rellax-speed=&quot;-5.5&quot;&gt;&lt;img src=&quot;./img/parallax03_img02.png&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax03_content02 rellax&quot; data-rellax-speed=&quot;-3&quot;&gt;
+    &lt;p class=&quot;title ttl_content02&quot;&gt;Pie&lt;/p&gt;
+    &lt;p class=&quot;text&quot;&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. &lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- Mont Blanc --&gt;
+&lt;div class=&quot;parallax03_img03 rellax&quot; data-rellax-speed=&quot;-5&quot;&gt;&lt;img src=&quot;./img/parallax03_img03.png&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax03_content03 rellax&quot; data-rellax-speed=&quot;-5.5&quot;&gt;
+    &lt;p class=&quot;title ttl_content03&quot;&gt;Mont Blanc&lt;/p&gt;
+    &lt;p class=&quot;text&quot;&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. &lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- Macaroon --&gt;
+&lt;div class=&quot;parallax03_img04 rellax&quot; data-rellax-speed=&quot;-4.5&quot;&gt;&lt;img src=&quot;./img/parallax03_img04.png&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallax03_content04 rellax&quot; data-rellax-speed=&quot;-5&quot;&gt;
+    &lt;p class=&quot;title ttl_content04&quot;&gt;Macaroon&lt;/p&gt;
+    &lt;p class=&quot;text&quot;&gt;Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;../js/rellax.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var rellax = new Rellax(&#039;.rellax&#039;);
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>body,
+html {
+    height: 200%; /* 全画面にコンテンツを広げるために親要素に高さ200%を指定しておく */
+    font-size: 30px;
+}
+h1 {
+    font-size: 100px;
+    margin: 50px 0;
+    text-align: center;
+    color: #ACB6E5; /* 非対応のブラウザでの文字色を設定 */
+    background: -webkit-linear-gradient(0deg, #ff69b4, #ffe140); /* 背景色にグラデーションを指定 */
+    -webkit-background-clip: text; /* テキストでくり抜く */
+    -webkit-text-fill-color: transparent; /* くり抜いた部分は背景を表示 */
+}
+.wrapper {
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+.wrapper div {
+    position: absolute;
+}
+.wrapper img {
+    max-width: 300px;
+}
+.title {
+    font-size: 70px;
+    font-weight: bold;
+}
+.text {
+    font-size: 18px;
+}
+/* 画像の位置を指定 */
+.parallax03_img02 {
+    top: 12%;
+    right: 50px;
+}
+.parallax03_img03 {
+    top: 23%;
+    left: 100px;
+}
+.parallax03_img04 {
+    top: 37%;
+    right: 100px;
+}
+/* テキストの位置を指定 */
+.parallax03_content01 {
+    top: 5%;
+    left: 39%;
+}
+.parallax03_content02 {
+    top: 15%;
+    right: 35%;
+}
+.parallax03_content03 {
+    top: 23%;
+    left: 45%;
+}
+.parallax03_content04 {
+    top: 38%;
+    left: 18%;
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 03 -->
+
+        <!-- content 04 -->
+        <section class="content">
+            <h2 class="contentTtl">CSS cover その2（紙芝居風）</h2>
+            <div class="link demo04">
+                <a href="./parallax04.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;p class=&quot;text&quot;&gt;scroll me&lt;/p&gt;
+&lt;div class=&quot;parallaxBg parallax04_img01&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallaxBg parallax04_img02&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallaxBg parallax04_img03&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;parallaxBg parallax04_img04&quot;&gt;&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>body,
+html {
+    height: 100%; /* 全画面にコンテンツを広げるために親要素に高さ100%を指定しておく */
+    font-size: 30px;
+    position: relative;
+}
+.text {
+    position: fixed;
+    top: 28%;
+    left: 25%;
+}
+.parallaxBg { /* パララックスな背景画像の共通設定 */
+    background-attachment: fixed; /* 背景画像を固定表示 */
+    background-position: center;
+    background-size: cover; /* コンテンツ全体に画像を表示 */
+    background-repeat: no-repeat;
+    height: 100%; /* 背景画像ありのエリアのみ高さを小さくしてみる */
+}
+.parallax04_img01 {
+    height: 100%;
+    background-image: url('../parallax/img/parallax04_img01.jpg'); /* 各エリアに背景画像を設定 */
+}
+.parallax04_img02 {
+    background-image: url('../parallax/img/parallax04_img02.jpg');
+}
+.parallax04_img03 {
+    background-image: url('../parallax/img/parallax04_img03.jpg');
+}
+.parallax04_img04 {
+    background-image: url('../parallax/img/parallax04_img04.jpg');
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 04 -->
+        
+    </main>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+body,
+html {
+  height: 100%; /* 全画面にコンテンツを広げるために親要素に高さ100%を指定しておく */
+  font-size: 30px;
+  position: relative;
+}
+.text {
+    position: fixed;
+    top: 28%;
+    left: 25%;
+}
+.parallaxBg { /* パララックスな背景画像の共通設定 */
+    background-attachment: fixed; /* 背景画像を固定表示 */
+    background-position: center;
+    background-size: cover; /* コンテンツ全体に画像を表示 */
+    background-repeat: no-repeat;
+    height: 100%; /* 背景画像ありのエリアのみ高さを小さくしてみる */
+}
+.parallax04_img01 {
+    height: 100%;
+    background-image: url('../parallax/img/parallax04_img01.jpg'); /* 各エリアに背景画像を設定 */
+}
+.parallax04_img02 {
+    background-image: url('../parallax/img/parallax04_img02.jpg');
+}
+.parallax04_img03 {
+    background-image: url('../parallax/img/parallax04_img03.jpg');
+}
+.parallax04_img04 {
+    background-image: url('../parallax/img/parallax04_img04.jpg');
+}
