@@ -30,3 +30,7 @@
 .demo03 {
     background-image: url('../parallax/img/parallax03_img02.jpg');
 }
+.demo04 {
+    background-size: 150%;
+    background-image: url('../parallax/img/parallax04_img03.jpg');
+}
