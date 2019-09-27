@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.contents {
+  width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* カードを等間隔で配置 */
+}
+.card {
+  width: 300px;
+  margin-bottom: 50px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2);
+}
+.skeleton {
+  width: 100%;
+  height: 190px;
+  background: #d9d9d9;
+  overflow: hidden;
+  position: relative;
+}
+.card p {
+  margin: 20px;
+}
+.loading img { /* 初期非表示 */
+  display: none;
+}
+.loading::before { /* 疑似要素でローディング中のスケルトンスクリーンを作成 */
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255, .5), transparent); /* グラデーションでシマー効果をつける */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: skeletonAnimation 1.2s linear infinite;
+  /* infinite:無限に再生を繰り返す
+  　　linear:一定のスピード */
+}
+/* 左から右へ動かす（シマー効果） */
+@keyframes skeletonAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

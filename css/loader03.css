@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.loader-bg03 {
+    width: 100%;
+    height: 100vh;
+    background: #dfbca7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader03 {
+  width: 30%;  /* 横棒の幅 */
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
+.loading_bar {
+  width: 0;
+  height: 5px;
+  background: #fff;
+  transition-duration: 1s;  /* 横棒の長さが変わった時のアニメーションの時間 */
+}
+.contents div {
+    width: 50%;
+    margin: 5% auto;
+}
