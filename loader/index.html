@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>loader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300|Noto+Sans+JP:300&amp;subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/loader.css">
+</head>
+<body>
+    <header>
+        <h1>loader</h1>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+        <!-- content 01 -->
+        <section class="content">
+            <h2 class="contentTtl">スピナー</h2>
+            <div class="link demo01">
+                <a href="./loader01.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;!-- ローディング画面 --&gt;
+&lt;div class=&quot;loader-bg&quot;&gt;
+    &lt;div class=&quot;loading&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ロード後に表示されるメインコンテンツ --&gt;
+&lt;div class=&quot;contents&quot;&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader01.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader02.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader03.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>.loader-bg {
+    width: 100%;
+    height: 100vh;
+    background: #dbebc4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading {
+    margin: 100px;
+    font-size: 15px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    animation: loading 1.1s infinite ease;
+    /* infinite:無限に再生を繰り返す
+    　　ease:開始と完了を滑らかに */
+}
+.contents div {
+    width: 50%;
+    margin: 5% auto;
+}
+
+@keyframes loading {
+    /* 
+    1つの円div.loadingに対して、
+    box-shadowで8つの影を作り、円形に配置する。
+    それぞれ透明度を調整し、キーフレームで動かす。
+        */
+    0%,
+    100% {
+    box-shadow: 0em -2.6em 0em 0em #ffffff, 
+    1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 
+    0em 2.5em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), 
+    -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+    }
+    12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 
+    1.8em -1.8em 0 0em #ffffff, 
+    2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 
+    0em 2.5em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+    }
+    25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 
+    1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 
+    2.5em 0em 0 0em #ffffff, 
+    1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 
+    0em 2.5em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 
+    1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 
+    2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 
+    1.75em 1.75em 0 0em #ffffff, 
+    0em 2.5em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 
+    1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 
+    1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 
+    0em 2.5em 0 0em #ffffff, 
+    -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 
+    1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 
+    0em 2.5em 0 0em rgba(255, 255, 255, 0.7), 
+    -1.8em 1.8em 0 0em #ffffff, 
+    -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 
+    1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 
+    0em 2.5em 0 0em rgba(255, 255, 255, 0.5), 
+    -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), 
+    -2.6em 0em 0 0em #ffffff, 
+    -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+    }
+    87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 
+    1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 
+    2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 
+    1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 
+    0em 2.5em 0 0em rgba(255, 255, 255, 0.2), 
+    -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), 
+    -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), 
+    -1.8em -1.8em 0 0em #ffffff;
+    }
+}</code></pre>
+                </div>
+                <div class="code">
+                    <h3>JS</h3>
+                    <pre class="prettyprint linenums"><code>$(function(){
+    var loaderBg = $('.loader-bg');
+    var loader = $('.loader');
+    
+    // ページの読み込みが完了したら、ローディング画面を非表示
+    $(window).on('load', stopLoader());
+
+    function stopLoader() {
+        loaderBg.fadeOut(800);
+        loader.fadeOut(300);
+    }
+});</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 01 -->
+
+        <!-- content 02 -->
+        <section class="content">
+            <h2 class="contentTtl">パーセンテージ</h2>
+            <div class="link demo02">
+                <a href="./loader02.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;!-- ローディング画面 --&gt;
+&lt;div class=&quot;loader-bg02&quot;&gt;
+    &lt;p class=&quot;loader02&quot;&gt;loading... &lt;span class=&quot;load-ratio&quot;&gt;&lt;/span&gt; %&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- ロード後に表示されるメインコンテンツ --&gt;
+&lt;div class=&quot;contents&quot;&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader01.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader02.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader03.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>.loader-bg02 {
+    width: 100%;
+    height: 100vh;
+    background: #cacce7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader02 {
+    color: #fff;
+    font-size: 30px;
+}
+.load-ratio {
+    font-size: 70px;
+    font-family: 'Dancing Script', cursive;
+}
+.contents div {
+    width: 50%;
+    margin: 5% auto;
+}</code></pre>
+                </div>
+                <div class="code">
+                    <h3>JS</h3>
+                    <pre class="prettyprint linenums"><code>$(function(){
+    var loaderBg02 = $('.loader-bg02');
+    var loader02 = $('.loader02');
+    
+    var images = $('img');
+    var loadRatioArea = $('.load-ratio');
+
+    var imgLen = images.length; // 画像の総数
+    var oneLoadRatio = 100 / imgLen; // 画像1枚あたりの読み込み進捗率
+    var loadRatio = 0; // 全体の進捗率
+
+    for(var i = 0; i < imgLen; i++) {
+        $(images[i]).on('load', function(){
+            // 画像を読み込むごとに進捗率が上がる
+            loadRatio += oneLoadRatio;
+            // 読み込み進捗率の値を四捨五入して、整数で表示
+            loadRatioArea.text(Math.round(loadRatio));
+            // 画像の読み込みが100％に到達するまで待ってから（1秒ほど）、ローディング画面を非表示
+            if(loadRatio >= 100) {
+                setTimeout(function(){
+                    stopLoader(loaderBg02, loader02);
+                }, 500);
+            }
+        });
+    }
+});
+
+function stopLoader(loaderBg, loader) {
+    loaderBg.fadeOut(800);
+    loader.fadeOut(300);
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 02 -->
+
+        <!-- content 03 -->
+        <section class="content">
+            <h2 class="contentTtl">プログレスバー</h2>
+            <div class="link demo03">
+                <a href="./loader03.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;!-- ローディング画面 --&gt;
+&lt;div class=&quot;loader-bg03&quot;&gt;
+    &lt;div class=&quot;loader03&quot;&gt;
+        &lt;p&gt;loading...&lt;/p&gt;
+        &lt;div class=&quot;loading_bar&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ロード後に表示されるメインコンテンツ --&gt;
+&lt;div class=&quot;contents&quot;&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader01.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader02.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;./img/loader03.jpg&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>.loader-bg03 {
+    width: 100%;
+    height: 100vh;
+    background: #dfbca7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader03 {
+    width: 30%;  /* 横棒の幅 */
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+.loading_bar {
+    width: 0;
+    height: 5px;
+    background: #fff;
+    transition-duration: 1s;  /* 横棒の長さが変わった時のアニメーションの時間 */
+}
+.contents div {
+    width: 50%;
+    margin: 5% auto;
+}</code></pre>
+                </div>
+                <div class="code">
+                    <h3>JS</h3>
+                    <pre class="prettyprint linenums"><code>$(function(){
+    var images = $('img');
+    var imgLen = images.length; // 画像の総数
+    var loaderBg03 = $('.loader-bg03');
+    var loader03 = $('.loader03');
+    var loadingBar = $('.loading_bar');
+
+    var barLen = 100 / imgLen; // 画像1枚あたりの読み込み進捗率（横幅）
+    var barWidth = 0; // 全体の進捗率（横幅）
+
+    for(var i=0; i < imgLen; i++) {
+        $(images[i]).on('load', function(){
+            // 画像を読み込むごとに横幅を増やす
+            barWidth += barLen;
+            loadingBar.css('width', barWidth + '%');
+            // 横幅が100％まで到達するまで待ってから（1秒ほど）、ローディング画面を非表示
+            if(barWidth >= 100) {
+                setTimeout(function(){
+                    stopLoader(loaderBg03, loader03);
+                }, 1000);
+            }
+        });
+    }
+});
+function stopLoader(loaderBg, loader) {
+    loaderBg.fadeOut(800);
+    loader.fadeOut(300);
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 03 -->
+
+        <!-- content 04 -->
+        <section class="content">
+            <h2 class="contentTtl">スケルトンスクリーン</h2>
+            <div class="link demo04">
+                <a href="./loader04.html" target="_brank">demo page</a>
+            </div>
+            <div class="slideTglBtn">View code</div>
+            <div class="slideTglArea">
+                <div class="code">
+                    <h3>HTML</h3>
+                    <pre class="prettyprint linenums"><code>&lt;div class=&quot;contents&quot;&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;skeleton loading&quot;&gt;
+            &lt;img src=&quot;./img/loader01.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;skeleton loading&quot;&gt;
+            &lt;img src=&quot;./img/loader02.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;skeleton loading&quot;&gt;
+            &lt;img src=&quot;./img/loader03.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;skeleton loading&quot;&gt;
+            &lt;img src=&quot;./img/loader04.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;skeleton loading&quot;&gt;
+            &lt;img src=&quot;./img/loader05.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;skeleton loading&quot;&gt;
+            &lt;img src=&quot;./img/loader06.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card&quot;&gt;
+        &lt;div class=&quot;skeleton loading&quot;&gt;
+            &lt;img src=&quot;./img/loader07.jpg&quot; alt=&quot;&quot;&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <div class="code">
+                    <h3>CSS</h3>
+                    <pre class="prettyprint linenums"><code>.contents {
+width: 1000px;
+margin: 50px auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between; /* カードを等間隔で配置 */
+}
+.card {
+width: 300px;
+margin-bottom: 50px;
+box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .2);
+}
+.skeleton {
+width: 100%;
+height: 190px;
+background: #d9d9d9;
+overflow: hidden;
+position: relative;
+}
+.card p {
+margin: 20px;
+}
+.loading img { /* 初期非表示 */
+display: none;
+}
+.loading::before { /* 疑似要素でローディング中のスケルトンスクリーンを作成 */
+content: '';
+display: block;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255,255,255, .5), transparent); /* グラデーションでシマー効果をつける */
+position: absolute;
+top: 0;
+left: 0;
+animation: skeletonAnimation 1.2s linear infinite;
+/* infinite:無限に再生を繰り返す
+　　linear:一定のスピード */
+}
+/* 左から右へ動かす（シマー効果） */
+@keyframes skeletonAnimation {
+0% {
+    transform: translateX(-100%);
+}
+100% {
+    transform: translateX(100%);
+}
+}</code></pre>
+                </div>
+                <div class="code">
+                    <h3>JS</h3>
+                    <pre class="prettyprint linenums"><code>$(function(){
+    var skeletonImg = $('.skeleton img');
+    skeletonImg.on('load', function(){
+        $('.skeleton').removeClass('loading');
+    });
+}</code></pre>
+                </div>
+            </div><!-- /toggleSlide -->
+        </section><!-- /content 04 -->
+        
+    </main>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>
