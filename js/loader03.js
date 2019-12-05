@@ -9,19 +9,36 @@ $(function(){
     var barLen = 100 / imgLen; // 画像1枚あたりの読み込み進捗率（横幅）
     var barWidth = 0; // 全体の進捗率（横幅）
 
-    for(var i=0; i < imgLen; i++) {
-        $(images[i]).on('load', function(){
+    // for(var i=0; i < imgLen; i++) {
+    //     $(images[i]).on('load', function(){
+    //         // 画像を読み込むごとに横幅を増やす
+    //         barWidth += barLen;
+    //         loadingBar.css('width', barWidth + '%');
+    //         // 横幅が100％まで到達するまで待ってから（1秒ほど）、ローディング画面を非表示
+    //         if(barWidth >= 100) {
+    //             setTimeout(function(){
+    //                 stopLoader(loaderBg03, loader03);
+    //             }, 1000);
+    //         }
+    //     });
+    // }
+
+    images.each(function(){
+        var src = $(this).attr('src');
+        $('<img>').attr('src', src).on('load', function(){
             // 画像を読み込むごとに横幅を増やす
             barWidth += barLen;
             loadingBar.css('width', barWidth + '%');
-            // 横幅が100％まで到達するまで待ってから（1秒ほど）、ローディング画面を非表示
-            if(barWidth >= 100) {
-                setTimeout(function(){
-                    stopLoader(loaderBg03, loader03);
-                }, 1000);
-            }
         });
-    }
+    });
+    setInterval(function(){
+        // 横幅が100％まで到達するまで待ってから、ローディング画面を非表示
+        if(barWidth >= 100) {
+            setTimeout(function(){
+                stopLoader(loaderBg03, loader03);
+            }, 500);
+        }
+    }, 1);
 });
 
 function stopLoader(loaderBg, loader) {
